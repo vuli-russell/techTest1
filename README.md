@@ -6,6 +6,7 @@ to view:
 - yarn run start
 
 for weather data to load:
+    
     sign up for an api key at: https://home.openweathermap.org/users/sign_up
     
     - create a .env file and put following inside
