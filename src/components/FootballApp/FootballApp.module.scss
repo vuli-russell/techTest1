@@ -1,5 +1,14 @@
 @import "../../assets/styles/styles.scss";
 
+.header{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    img {
+       height: 100px; 
+    }
+}
+
 .football {
     display: flex;
     height: 100%;
@@ -12,5 +21,24 @@
 
     .team {
         flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        h1 {
+            text-align: center;
+        }
+
+        .currentLineUp {
+            display: flex;
+            justify-content: center;
+
+            p {
+                border: 1px solid black;
+                border-radius: $base-spacing;
+                padding: $base-spacing;
+                margin: $base-spacing;
+            }
+        }
     }
 }

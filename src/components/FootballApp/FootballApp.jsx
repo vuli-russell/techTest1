@@ -2,6 +2,8 @@ import React, {useState} from "react";
 import styles from "./FootballApp.module.scss";
 import * as data from "../../data/teamData.json";
 import PlayerCard from "./PlayerCard";
+import { faMinusCircle } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const FootballApp = () => {
 
@@ -18,22 +20,45 @@ const FootballApp = () => {
 
   const [players, setPlayers] = useState(data.default.filter(player => player.role==="PLAYER"))
 
+  const removePlayer = (player) => {
+    setCurrentLineUp({...currentLineUp, [player.position]: currentLineUp[player.position].filter(currentPlayer => currentPlayer != player)})
+  }
+  
   return (
-    <main className={styles.football}>
-      <section className={styles.playerCards}>
-        {players.filter(player => !currentLineUp[player.position].includes(player))
-          .map(player => <PlayerCard key={player.id}
-          player={player}
-          currentLineUp={currentLineUp}
-          setCurrentLineUp={setCurrentLineUp}/>
-        )}
-      </section>
-      <section className={styles.team}>
-        {Object.keys(currentLineUp).map(position => {
-          return (<div><h1>{position}</h1>{currentLineUp[position].map(player => <p>{player.name}</p>)}</div>)
-        })}
-      </section>
-    </main>
+    <>
+      <header className={styles.header}>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Borussia_M%C3%B6nchengladbach_logo.svg/1200px-Borussia_M%C3%B6nchengladbach_logo.svg.png" alt=""/>
+        <h1>Borussia Mönchengladbach Team Picker</h1>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Borussia_M%C3%B6nchengladbach_logo.svg/1200px-Borussia_M%C3%B6nchengladbach_logo.svg.png" alt=""/>
+      </header> 
+      <main className={styles.football}>
+        <section className={styles.playerCards}>
+          {players.filter(player => !currentLineUp[player.position].includes(player))
+            .map(player => <PlayerCard key={player.id}
+            player={player}
+            currentLineUp={currentLineUp}
+            setCurrentLineUp={setCurrentLineUp}/>
+          )}
+        </section>
+        <section className={styles.team}>
+          {Object.keys(currentLineUp).map(position => {
+            return (
+              <div key={position}>
+                <h1>{position}</h1>
+                <div className={styles.currentLineUp}>
+                  {currentLineUp[position].map(player => (
+                    <p key={player.id}>
+                      {player.name}
+                      <FontAwesomeIcon icon={faMinusCircle} onClick={() => {removePlayer(player)}} />
+                    </p>
+                  ))}
+                </div>
+              </div>
+            )
+          })}
+        </section>
+      </main>
+    </>
   );
 };
 

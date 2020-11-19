@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./PlayerCard.module.scss";
-import { faPlusCircle, faMinusCircle } from "@fortawesome/free-solid-svg-icons";
+import { faPlusCircle } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const PlayerCard = (props) => {
