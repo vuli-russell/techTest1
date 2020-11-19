@@ -1,0 +1,24 @@
+@import "../../assets/styles/styles.scss";
+
+.quiz {
+    text-align: center;
+
+    form {
+        > * {
+            margin: $base-spacing
+        }
+    }
+
+    .answer {
+        margin: $base-spacing;
+        padding: $base-spacing;
+
+        &.right {
+            background-color:rgb(32, 204, 32);
+        }
+    
+        &.wrong {
+            background-color:rgb(250, 94, 94);
+        }
+    }
+}
