@@ -1,0 +1,46 @@
+@import "../../../assets/styles/styles.scss";
+
+.weatherCard {
+    margin: 10px;
+    background-color: rgb(196, 196, 255);
+    display: grid;
+    padding: $base-spacing;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: 
+    "n n i"
+    "d d i"
+    "t f i"
+    "h l i";
+
+    div > * {
+        margin: 0 !important;
+    }
+
+    .name {
+        grid-area: n;
+    }
+    
+    .description {
+        grid-area: d;
+    }
+
+    .icon {
+        grid-area: i;
+    }
+
+    .temp {
+        grid-area: t;
+    }
+
+    .feelsLike {
+        grid-area: f;
+    }
+
+    .maxTemp {
+        grid-area: h;
+    }
+
+    .minTemp {
+        grid-area: l;
+    }
+}

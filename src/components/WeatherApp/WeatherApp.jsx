@@ -18,7 +18,7 @@ const WeatherApp = () => {
 
   return (
     <main className={styles.weatherGallery}>
-      {weatherData.length ? weatherData.map(city => <WeatherCard data={city}/>) : <h1>Loading</h1>} 
+      {weatherData.length ? weatherData.map(city => <WeatherCard key={city.id} data={city}/>) : <h1>Loading</h1>} 
     </main>
   );
 };
