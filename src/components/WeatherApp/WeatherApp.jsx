@@ -2,11 +2,13 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import WeatherCard from "./WeatherCard"
 import styles from "./WeatherApp.module.scss";
+import dotenv from "dotenv";
 
+dotenv.config()
 
 const WeatherApp = () => {
 
-  const weatherUrl = `https://api.openweathermap.org/data/2.5/group?id=2643744,4749005,4219762&appid=00ab568678c6d947e7158c039c220c2a`
+  const weatherUrl = `https://api.openweathermap.org/data/2.5/group?id=2643744,4749005,4219762&appid=${process.env.REACT_APP_API_KEY}`
 
   const [weatherData, setWeatherData] = useState([])
 
