@@ -3,7 +3,7 @@ import styles from "./QuizApp.module.scss";
 import { useForm } from "react-hook-form";
 
 const QuizApp = () => {
-  const { register, handleSubmit} = useForm();
+  const { register, handleSubmit, errors} = useForm();
 
   const onSubmit = data => {
     setResponse(data.answer.match(/kanye/i)? true : data.answer);
@@ -19,6 +19,7 @@ const QuizApp = () => {
           <label htmlFor="answer">Who is the foremost World Genius Right Now?</label>
           <br/>
           <input type="text" name="answer" id="answer" ref={register({required: true})}/>
+          {errors.answer && <span>Please enter an answer</span>}
           <br/>
           <input type="submit"/>
         </form>
@@ -30,7 +31,7 @@ const QuizApp = () => {
           :
           response ?
           <div className={`${styles.answer} ${styles.wrong}`}>
-            {`${response} is not the foremost genius right now, Please try again`}
+            {`${response} is not the foremost genius right now - please try again`}
           </div>
           :
           null
