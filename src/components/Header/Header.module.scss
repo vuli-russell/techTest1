@@ -1,0 +1,27 @@
+@import "../../assets/styles/styles.scss";
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    margin: $base-spacing;
+    align-items: center;
+
+    .links {
+        display: flex;
+
+        .link {
+            transform: scale(1);
+            transition: all 0.3s ease;
+            
+            a {
+                color: black;
+                font-size: $text-size * 2;
+                margin: $base-spacing;
+            }
+
+            &:hover{
+                transform: scale(1.5)
+            }
+        }
+    }
+}
