@@ -8,7 +8,7 @@ import { Router } from "@reach/router";
 const Routes = () => {
   return (
     <>
-      <Router>
+      <Router primary={false} className={styles.router}>
         <WeatherApp path="/" />
         <QuizApp path="/quiz" />
         <FootballApp path="/football" />

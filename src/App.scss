@@ -1,1 +1,8 @@
-@import "assets/styles/styles.scss"
+@import "assets/styles/styles.scss";
+
+.App {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow: hidden;
+}
