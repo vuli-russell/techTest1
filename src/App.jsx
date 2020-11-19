@@ -1,10 +1,12 @@
-import logo from './logo.svg';
 import './App.scss';
+import Header from "./components/Header";
+import Routes from "./components/Routes";
 
 function App() {
   return (
     <div className="App">
-      <h1>App</h1>
+      <Header />
+      <Routes />
     </div>
   );
 }
