@@ -7,10 +7,10 @@
     padding: $base-spacing;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-areas: 
-    "n n i"
-    "d d i"
+    "n d i"
     "t f i"
-    "h l i";
+    "h l i"
+    "w p i";
 
     div > * {
         margin: 0 !important;
@@ -42,5 +42,13 @@
 
     .minTemp {
         grid-area: l;
+    }
+
+    .humidity {
+        grid-area: w;
+    }
+
+    .pressure {
+        grid-area: p;
     }
 }

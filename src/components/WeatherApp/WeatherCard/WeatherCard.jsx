@@ -27,7 +27,7 @@ const WeatherCard = (props) => {
       </div>
 
       <div className={styles.temp}>
-        <h1>{toC(temp)}</h1>
+        <p>{toC(temp)}</p>
       </div>
 
       <div className={styles.feelsLike}>
@@ -45,6 +45,18 @@ const WeatherCard = (props) => {
         <p>
           <FontAwesomeIcon icon={faArrowDown} />
           {toC(temp_min)}
+        </p>
+      </div>
+
+      <div className={styles.humidity}>
+        <p>
+          RH: {humidity}%
+        </p>
+      </div>
+
+      <div className={styles.pressure}>
+        <p>
+          {pressure} mbara
         </p>
       </div>
 
