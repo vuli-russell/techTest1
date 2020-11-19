@@ -24,9 +24,19 @@ const PlayerCard = (props) => {
       break;
   }
 
+  const showmessage = (message) => {
+    const div = document.createElement("div");
+    const p = document.createElement("p");
+    p.innerText=message; 
+    div.append(p);
+    div.classList.add(styles.warning)
+    document.getElementById("root").append(div)
+    setTimeout(()=>{div.remove()},2000)
+  }
+
   const addPlayer = (player) => {
     if(currentLineUp[player.position].length >= numberAllowable){
-      console.log("full");
+      showmessage(`No More ${player.position}s allowed in the team`)
     }else{
       setCurrentLineUp({...currentLineUp, [player.position]:[...currentLineUp[player.position], player]});
     }

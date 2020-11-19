@@ -1,5 +1,20 @@
 @import "../../../assets/styles/styles.scss";
 
+.warning{
+    position: absolute;
+    left: 0;
+    bottom: 50%;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+
+    p{  
+        width: fit-content;
+        background-color: white;
+        border: black 1px solid;
+    }
+}
+
 .playerCard {
     margin: $base-spacing;
     padding: $base-spacing;

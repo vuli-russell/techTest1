@@ -26,12 +26,6 @@ const FootballApp = () => {
   
   return (
     <>
-      <header className={styles.header}>
-        {/* cant make local version of file load */}
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Borussia_M%C3%B6nchengladbach_logo.svg/1200px-Borussia_M%C3%B6nchengladbach_logo.svg.png" alt=""/>
-        <h1>Borussia Mönchengladbach Team Picker</h1>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Borussia_M%C3%B6nchengladbach_logo.svg/1200px-Borussia_M%C3%B6nchengladbach_logo.svg.png" alt=""/>
-      </header> 
       <main className={styles.football}>
         <section className={styles.playerCards}>
           {players.filter(player => !currentLineUp[player.position].includes(player))
@@ -42,6 +36,12 @@ const FootballApp = () => {
           )}
         </section>
         <section className={styles.team}>
+          <header className={styles.header}>
+            {/* cant make local version of file load*/}
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Borussia_M%C3%B6nchengladbach_logo.svg/1200px-Borussia_M%C3%B6nchengladbach_logo.svg.png" alt=""/>
+            <h1>Borussia Mönchengladbach Team Picker</h1>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Borussia_M%C3%B6nchengladbach_logo.svg/1200px-Borussia_M%C3%B6nchengladbach_logo.svg.png" alt=""/>
+            </header> 
           {Object.keys(currentLineUp).map(position => {
             return (
               <div key={position}>
