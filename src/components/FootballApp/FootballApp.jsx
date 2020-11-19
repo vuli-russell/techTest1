@@ -21,7 +21,8 @@ const FootballApp = () => {
   return (
     <main className={styles.football}>
       <section className={styles.playerCards}>
-        {players.map(player => <PlayerCard key={player.id}
+        {players.filter(player => !currentLineUp[player.position].includes(player))
+          .map(player => <PlayerCard key={player.id}
           player={player}
           currentLineUp={currentLineUp}
           setCurrentLineUp={setCurrentLineUp}/>
