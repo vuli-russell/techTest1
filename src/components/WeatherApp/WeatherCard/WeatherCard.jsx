@@ -6,58 +6,26 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 const WeatherCard = (props) => {
 
   const { name, main, weather } = props.data;
-  const { feels_like, humidity, pressure, temp, temp_max, temp_min } = main
-  const { description, icon} = weather[0]
+  const { feels_like, humidity, temp, temp_max, temp_min } = main
+  const { icon } = weather[0]
 
-  const toC = (kelvin) => `${Math.round((kelvin-273.15)*100)/100}°C`;
-  console.log(props.data)
+  const toC = (kelvin) => `${Math.round((kelvin-273.15)*10)/10}°C`;
   return (
     <article className={styles.weatherCard}>
 
-      <div className={styles.name}>
-        <p>{name}</p>
-      </div>
 
-      <div className={styles.description}>
-        <p>{description}</p>
-      </div>
-
-      <div className={styles.icon}>
-        <img src={`http://openweathermap.org/img/wn/${icon}@2x.png`} alt="weather icon"/>
-      </div>
-
-      <div className={styles.temp}>
-        <p>{toC(temp)}</p>
-      </div>
-
-      <div className={styles.feelsLike}>
+      <h1>{name}</h1>
+      <img src={`http://openweathermap.org/img/wn/${icon}@2x.png`} alt=""/>
+      <h1>{toC(temp)}</h1>
+      <div>
         <p>Feels like: {toC(feels_like)}</p>
-      </div>
-
-      <div className={styles.maxTemp}>
         <p>
-          <FontAwesomeIcon icon={faArrowUp} />
-          {toC(temp_max)}
+          Max: {toC(temp_max)}
         </p>
-      </div>
-
-      <div className={styles.minTemp}>
         <p>
-          <FontAwesomeIcon icon={faArrowDown} />
-          {toC(temp_min)}
+          Min: {toC(temp_min)}
         </p>
-      </div>
-
-      <div className={styles.humidity}>
-        <p>
-          RH: {humidity}%
-        </p>
-      </div>
-
-      <div className={styles.pressure}>
-        <p>
-          {pressure} mbara
-        </p>
+        <p>RH: {humidity}%</p>
       </div>
 
     </article>

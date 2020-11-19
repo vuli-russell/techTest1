@@ -4,7 +4,7 @@ import { faFutbol, faSun, faQuestionCircle } from "@fortawesome/free-solid-svg-i
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link } from "@reach/router";
 
-const Header = () => {
+const Header = (props) => {
   return (
     <header className={styles.header}>
       <h1>Vuli Russell Tech Test</h1>

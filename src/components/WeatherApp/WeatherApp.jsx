@@ -18,6 +18,8 @@ const WeatherApp = () => {
 
   return (
     <main className={styles.weatherGallery}>
+      <h1>Some Very Specific Weather Data</h1>
+      <p>Sorry if you dont live in one of these 3 places</p>
       {weatherData.length ? weatherData.map(city => <WeatherCard key={city.id} data={city}/>) : <h1>Loading</h1>} 
     </main>
   );
