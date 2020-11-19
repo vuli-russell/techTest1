@@ -27,6 +27,7 @@ const FootballApp = () => {
   return (
     <>
       <header className={styles.header}>
+        {/* cant make local version of file load */}
         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Borussia_M%C3%B6nchengladbach_logo.svg/1200px-Borussia_M%C3%B6nchengladbach_logo.svg.png" alt=""/>
         <h1>Borussia Mönchengladbach Team Picker</h1>
         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Borussia_M%C3%B6nchengladbach_logo.svg/1200px-Borussia_M%C3%B6nchengladbach_logo.svg.png" alt=""/>
@@ -44,13 +45,13 @@ const FootballApp = () => {
           {Object.keys(currentLineUp).map(position => {
             return (
               <div key={position}>
-                <h1>{position}</h1>
+                <h1>{`${position}s`}</h1>
                 <div className={styles.currentLineUp}>
                   {currentLineUp[position].map(player => (
-                    <p key={player.id}>
-                      {player.name}
-                      <FontAwesomeIcon icon={faMinusCircle} onClick={() => {removePlayer(player)}} />
-                    </p>
+                    <div key={player.id} className={styles.playerIcon}>
+                      <span>{player.name}</span>
+                      <FontAwesomeIcon className={styles.remove} icon={faMinusCircle} onClick={() => {removePlayer(player)}} />
+                    </div>
                   ))}
                 </div>
               </div>

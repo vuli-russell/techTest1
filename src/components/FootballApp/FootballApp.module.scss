@@ -33,11 +33,21 @@
             display: flex;
             justify-content: center;
 
-            p {
+            
+            .playerIcon {
+                display: flex;
+                align-items: center;
                 border: 1px solid black;
                 border-radius: $base-spacing;
-                padding: $base-spacing;
                 margin: $base-spacing;
+
+                > * {
+                    padding: $base-spacing;
+                }
+
+                .remove:hover{
+                    color: red;
+                }
             }
         }
     }
