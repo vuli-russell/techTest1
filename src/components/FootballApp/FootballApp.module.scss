@@ -1,0 +1,13 @@
+@import "../../assets/styles/styles.scss";
+
+.football {
+    display: flex;
+
+    .playerCards {
+        flex-grow: 0;
+    }
+
+    .team {
+        flex-grow: 1;
+    }
+}
